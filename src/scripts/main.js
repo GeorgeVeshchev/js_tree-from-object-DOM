@@ -24,10 +24,10 @@ const tree = document.querySelector('#tree');
 
 function createTree(element, data) {
   if (!element) {
-    return;
+    throw new Error('Tree container not found');
   }
 
-  if (!data || Object.keys(data).length === 0) {
+  if (!data || typeof data !== 'object' || Object.keys(data).length === 0) {
     return;
   }
 
